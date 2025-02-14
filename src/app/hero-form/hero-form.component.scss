@@ -1,0 +1,89 @@
+@import '../../styles/globals';
+
+mat-dialog-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+mat-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  .mat-label {
+    font-size: 1rem;
+    color: $dark-text-color;
+  }
+
+  input.mat-input-element {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+
+  mat-error {
+    font-size: 0.875rem;
+    color: red;
+    margin-top: 5px;
+  }
+}
+
+button.mat-button {
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: none;
+  font-size: 1rem;
+  min-width: 120px;
+  box-shadow: none;
+  transition: background-color 0.3s;
+}
+
+.mat-raised-button:disabled {
+  background-color: #bdbdbd !important;
+  cursor: not-allowed;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+mat-form-field {
+  flex: 1;
+  width: 100%;
+}
+
+div[mat-dialog-actions] {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-flow: row;
+}
+
+.mat-raised-button {
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: none;
+  font-size: 1rem;
+  min-width: 120px;
+  box-shadow: none;
+  transition: background-color 0.3s;
+  width: 100%;
+}

@@ -1,0 +1,89 @@
+@import '../../styles/globals';
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  gap: 15px;
+  
+  p {
+    font-size: 1rem;
+    margin: 0;
+    color: #333;
+    word-wrap: break-word;
+
+    strong {
+      color: $primary-color;
+      font-weight: 600;
+    }
+  }
+}
+
+h2.mat-dialog-title {
+  color: #3f51b5;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e0e0e0;
+  gap: 10px;
+}
+
+button.mat-button {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  min-width: 100px;
+  flex-grow: 1;  // Allow the buttons to grow and take available space
+  
+  &:hover {
+    background-color: #388e3c;
+  }
+
+  &.mat-dialog-close {
+    background-color: #f44336;
+    color: white;
+    margin-left: 10px;
+
+    &:hover {
+      background-color: #d32f2f;
+    }
+  }
+}
+
+// Flexbox ensures responsiveness without media queries
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h2.mat-dialog-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  color: #333;
+}
+
+button.mat-button {
+  width: 100%;
+}

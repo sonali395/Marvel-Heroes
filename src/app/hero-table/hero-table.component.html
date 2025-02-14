@@ -1,0 +1,66 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span class="app-title">Marvel Heroes</span>
+</mat-toolbar>
+<div class="hero-table-container">
+  <div class="filter-container">
+    <mat-form-field>
+      <mat-label>Filter Heroes</mat-label>
+      <mat-chip-grid #chipGrid>
+        <mat-chip-row *ngFor="let chip of filterChips" [removable]="true" (removed)="removeChip(chip)">
+          {{ chip }}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+        <input placeholder="Enter hero name.." [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputFor]="chipGrid" (matChipInputTokenEnd)="addChip($event)" />
+      </mat-chip-grid>
+    </mat-form-field>
+    <mat-label>
+      <button class="mat-raised-button" (click)="openCreateEditForm()">
+        <mat-label>Create Hero</mat-label>
+      </button>
+    </mat-label>
+  </div>
+  <div class="table-container">
+    <mat-table [dataSource]="dataSource" matSort>
+      <ng-container *ngFor="let column of columnDefinitions">
+        <ng-container matColumnDef="{{ column.columnDef }}">
+
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <h3>{{ column.header }}</h3>
+            <div class="chart" [id]="column.columnDef + '-chart'">
+            </div>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="openHeroDetails(element)">{{ element[column.columnDef] |
+            titlecase }}</mat-cell>
+        </ng-container>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef>
+          <h3>Edit</h3>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-icon-button (click)="openCreateEditForm(element)">
+            <mat-icon>edit</mat-icon>
+          </mat-icon-button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef>
+          <h3>Delete</h3>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-icon-button color="warn" (click)="deleteHero(element)">
+            <mat-icon>delete</mat-icon>
+          </mat-icon-button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+mat-header-cell {
+  background-color: #3f51b5;
+  color: white;
+}
+
+mat-row:hover {
+  background-color: #f1f1f1;
+}
+
+.mat-raised-button {
+  font-weight: 600;
+  padding: 4px 8px;
+  background-color: $primary-color !important;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.secondary-button {
+  background-color: $secondary-color !important;
+  color: black;
+  border: none!important;
+}
+
+h2.mat-mdc-dialog-title {
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: $primary-color;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  background-color: $primary-color;
+  color: white;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  font-weight: $font-weight-bold;
+  font-size: $font-size-large;
+  font-family: $font-family;
+  flex: 1 1 auto;
+}
